@@ -1,8 +1,6 @@
 FROM ubuntu:trusty
 MAINTAINER brunoric <brunoric@gmail.com>
 
-ENV 
-
 # Installing packages
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get -y install autoconf automake binutils-dev build-essential cmake g++ git \
