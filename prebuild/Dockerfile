@@ -28,7 +28,7 @@ ONBUILD RUN cd hhvm && git checkout "$HHVM_VERSION" && cmake . && make -j $CORE_
 
 # Scripts
 ONBUILD ADD ../supervisord-hhvm.conf /supervisord-hhvm.conf
-ONBUILD ADD ../supervisord-hhvm.sh /supervisord-hhvme.sh
+ONBUILD ADD ../supervisord-hhvm.sh /supervisord-hhvm.sh
 ONBUILD ADD ../start.sh /start.sh
 ONBUILD RUN chmod 755 /start.sh
 
