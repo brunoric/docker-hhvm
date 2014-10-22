@@ -23,7 +23,7 @@ notice any bug or typo, please let me know. This repository contains the follow 
 
 - **`:deb`** - This image uses the official [deb package of HHVM for Ubuntu 14.04][deb-package].
 - **`:prebuild`** - This image is just the base of the compiled images (i.e. all of them but `:deb`).
-- **`:latest`** (Build Status)[build-passing]- This image contains the latest stable version from [HHVM GitHub repository][repository].
+- **`:latest`** - This image contains the latest stable version from [HHVM GitHub repository][repository].
 - **`:dev`** - This image contains the development version from [HHVM GitHub repository][repository].
 - **`:3.3` `:3.2` `:3.1` `:3.0` `:2.4`** - These images corresponds to the tags from [HHVM GitHub repository][repository].
 
@@ -34,9 +34,7 @@ How to get?
 
 The first method of get the images is directly run a container with the desired tag like the example below:
     
-
     docker run -it brunoric/hhvm:deb hhvm -a
-
 
 This command will pull the :deb image (if you do not have it already) and execute `hhvm -a` command (opening an 
 interacte shell session).
