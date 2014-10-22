@@ -1,7 +1,7 @@
 FROM ubuntu:trusty
 MAINTAINER brunoric <brunoric@gmail.com>
 
-ENV HHVM_VERSION 3.3
+ENV HHVM_VERSION HHVM-3.3
 ENV CORE_NUMBER 4
 
 # Installing packages
@@ -24,7 +24,7 @@ RUN git clone git://github.com/facebook/hhvm.git --depth=1 && cd hhvm && \
 # ONBUILD instructions: https://docs.docker.com/reference/builder/#onbuild
 
 # Building HHVM
-ONBUILD RUN cd hhvm && git checkout "HHVM-$HHVM_VERSION" && cmake . && make -j $CORE_NUMBER && make install
+ONBUILD RUN cd hhvm && git checkout "$HHVM_VERSION" && cmake . && make -j $CORE_NUMBER && make install
 
 # Scripts
 ONBUILD ADD ../supervisord-hhvm.conf /supervisord-hhvm.conf
