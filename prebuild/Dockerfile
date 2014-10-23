@@ -18,13 +18,13 @@ RUN apt-get -y install autoconf automake binutils-dev build-essential cmake g++ 
 RUN apt-get clean && apt-get autoremove -y
 
 # Downloading HHVM from source-code
-RUN git clone git://github.com/facebook/hhvm.git --depth=1 && cd hhvm && \
+RUN git clone -b $HHVM_VERSION git@github.com:facebook/hhvm.git && cd hhvm && \
 	git submodule update --init --recursive
 
 # ONBUILD instructions: https://docs.docker.com/reference/builder/#onbuild
 
 # Building HHVM
-ONBUILD RUN cd hhvm && git checkout "$HHVM_VERSION" && cmake . && make -j $CORE_NUMBER && make install
+ONBUILD RUN cd hhvm && git checkout HHVM-3.3 && cmake . && make -j $CORE_NUMBER && make install
 
 # Scripts
 ONBUILD ADD supervisord-hhvm.conf /supervisord-hhvm.conf
