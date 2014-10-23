@@ -27,9 +27,9 @@ RUN git clone git://github.com/facebook/hhvm.git --depth=1 && cd hhvm && \
 ONBUILD RUN cd hhvm && git checkout "$HHVM_VERSION" && cmake . && make -j $CORE_NUMBER && make install
 
 # Scripts
-ONBUILD ADD ../supervisord-hhvm.conf /supervisord-hhvm.conf
-ONBUILD ADD ../supervisord-hhvm.sh /supervisord-hhvm.sh
-ONBUILD ADD ../start.sh /start.sh
+ONBUILD ADD supervisord-hhvm.conf /supervisord-hhvm.conf
+ONBUILD ADD supervisord-hhvm.sh /supervisord-hhvm.sh
+ONBUILD ADD start.sh /start.sh
 ONBUILD RUN chmod 755 /start.sh
 
 # Exposing HHVM-FastCGI port
