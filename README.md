@@ -5,15 +5,10 @@ docker-hhvm
 
 | Tag       | Build Status             | Base image             |
 | --------- | ------------------------ | ---------------------- |
+| :latest   | ![Latest][build-failing] | ubuntu:trusty          |
 | :deb      | ![Latest][build-passing] | ubuntu:trusty          |
-| :prebuild | ![Latest][build-passing] | ubuntu:trusty          |
-| :latest   | ![Latest][build-failing] | brunoric/hhvm:prebuild |
-| :dev      | ![Latest][build-failing] | brunoric/hhvm:prebuild |
-| :3.3      | ![Latest][build-failing] | brunoric/hhvm:prebuild |
-| :3.2      | ![Latest][build-failing] | brunoric/hhvm:prebuild |
-| :3.1      | ![Latest][build-failing] | brunoric/hhvm:prebuild |
-| :3.0      | ![Latest][build-failing] | brunoric/hhvm:prebuild |
-| :2.4      | ![Latest][build-failing] | brunoric/hhvm:prebuild |
+| :base     | ![Latest][build-passing] | ubuntu:trusty          |
+| :dev      | ![Latest][build-failing] | brunoric/hhvm:base     |
 
 
 Docker images to run PHP applications and scripts under HHVM. The intent of these images is to work *out-of-the-box* as
@@ -21,11 +16,10 @@ an [HHVM-FastCGI][fastcgi] server. The default command is `/start.sh` that execu
 but you can also use this image to run php scripts (or phar applications) as described in *How to use* section. If you 
 notice any bug or typo, please let me know. This repository contains the follow images:
 
+- **`:latest`** - This image is an alias to `deb`.
 - **`:deb`** - This image uses the official [deb package of HHVM for Ubuntu 14.04][deb-package].
-- **`:prebuild`** - This image is just the base of the compiled images (i.e. all of them but `:deb`).
-- **`:latest`** - This image contains the latest stable version from [HHVM GitHub repository][repository].
+- **`:base`** - This image is just the base for the compiled images (i.e. all of them but `:deb`).
 - **`:dev`** - This image contains the development version from [HHVM GitHub repository][repository].
-- **`:3.3` `:3.2` `:3.1` `:3.0` `:2.4`** - These images corresponds to the tags from [HHVM GitHub repository][repository].
 
 How to get?
 -----------
