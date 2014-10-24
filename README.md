@@ -49,7 +49,7 @@ does. You can also pull all the images from this repository just not adding a ta
 Finally, if you have time (yes, this can take a while if you not building the deb image), you can build the needed image 
 from scratch. To do so you need to clone `brunoric/hhvm` from GitHub and use make at the pulled directory  
 
-	make <version> # example: make deb
+	make build-<version> # example: make deb
 	
 With this method you can also make changes on the Dockerfiles fitting the images to your runtime (eg.: you can change 
 the CORE_NUMBER enviroment variable to compile faster if you have more than 4 CPU cores). 
