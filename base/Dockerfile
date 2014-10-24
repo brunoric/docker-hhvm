@@ -17,23 +17,8 @@ RUN apt-get -y install autoconf automake binutils-dev build-essential cmake g++ 
 	libiberty-dev libxslt1-dev ocaml-native-compilers libsqlite3-dev libyaml-dev libgmp3-dev
 RUN apt-get clean && apt-get autoremove -y
 
-# Downloading HHVM from source-code
-RUN git clone -b $HHVM_VERSION git@github.com:facebook/hhvm.git && cd hhvm && \
-	git submodule update --init --recursive
-
-# ONBUILD instructions: https://docs.docker.com/reference/builder/#onbuild
-
-# Building HHVM
-ONBUILD RUN cd hhvm && git checkout HHVM-3.3 && cmake . && make -j $CORE_NUMBER && make install
-
 # Scripts
-ONBUILD ADD supervisord-hhvm.conf /supervisord-hhvm.conf
-ONBUILD ADD supervisord-hhvm.sh /supervisord-hhvm.sh
-ONBUILD ADD start.sh /start.sh
-ONBUILD RUN chmod 755 /start.sh
-
-# Exposing HHVM-FastCGI port
-ONBUILD EXPOSE 9000
-
-# Default command
-ONBUILD CMD ["/start.sh"]
+ADD supervisord-hhvm.conf /supervisord-hhvm.conf
+ADD supervisord-hhvm.sh /supervisord-hhvm.sh
+ADD start.sh /start.sh
+RUN chmod 755 /start.sh
