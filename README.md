@@ -1,14 +1,12 @@
 docker-hhvm
 ===========
 
-**ATTENTION:** This repository is under construction and the ONLY recommended tag is `:deb`.
-
 | Tag       | Build Status             | Base image             |
 | --------- | ------------------------ | ---------------------- |
-| :latest   | ![Latest][build-failing] | ubuntu:trusty          |
+| :latest   | ![Latest][build-passing] | ubuntu:trusty          |
 | :deb      | ![Latest][build-passing] | ubuntu:trusty          |
 | :base     | ![Latest][build-passing] | ubuntu:trusty          |
-| :dev      | ![Latest][build-failing] | brunoric/hhvm:base     |
+| :dev      | ![Latest][build-passing] | brunoric/hhvm:base     |
 
 
 Docker images to run PHP applications and scripts under HHVM. The intent of these images is to work *out-of-the-box* as
