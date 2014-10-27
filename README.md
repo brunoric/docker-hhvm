@@ -8,7 +8,6 @@ docker-hhvm
 | :base     | ![Latest][build-passing] | ubuntu:trusty          |
 | :dev      | ![Latest][build-passing] | brunoric/hhvm:base     |
 
-
 Docker images to run PHP applications and scripts under HHVM. The intent of these images is to work *out-of-the-box* as
 an [HHVM-FastCGI][fastcgi] server. The default command is `/start.sh` that execute Supervisor to spawn HHVM as a server,
 but you can also use this image to run php scripts (or phar applications) as described in *How to use* section. If you 
@@ -86,6 +85,9 @@ Additional notes
 
 - [Docker documentation][docker].
 - [brunoric at Docker Hub][registry].
+- The build statuses are provided by [Docker Hub repository build details][repository-hub] and inserted manually in this
+documentation. I am also developing a little tool to handle [Docker Hub web hooks][web-hooks] and soon it will be the 
+automatic way to handle that statuses.
 
 [deb-package]: https://github.com/facebook/hhvm/wiki/Prebuilt-Packages-on-Ubuntu-14.04
 [fastcgi]: https://github.com/facebook/hhvm/wiki/FastCGI
@@ -94,3 +96,5 @@ Additional notes
 [registry]: https://registry.hub.docker.com/u/brunoric
 [build-passing]: http://img.shields.io/badge/build-passing-green.svg
 [build-failing]: http://img.shields.io/badge/build-failing-red.svg
+[repository-hub]: https://registry.hub.docker.com/u/brunoric/hhvm
+[web-hooks]: http://docs.docker.com/userguide/dockerrepos/#webhooks
