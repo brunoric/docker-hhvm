@@ -10,10 +10,9 @@ RUN sudo apt-get update && apt-get -y install libgmp-dev libmemcached-dev hhvm
 RUN apt-get clean && apt-get autoremove -y
 
 # Scripts
-ADD supervisord-hhvm.conf /supervisord-hhvm.conf
-ADD supervisord-hhvm.sh /supervisord-hhvme.sh
-ADD start.sh /start.sh
-RUN chmod 755 /start.sh
+ADD supervisor-config/ /etc/supervisor/conf.d/
+ADD scripts/ /scripts/
+RUN chmod 755 /scripts/*.sh
 
 # Exposing HHVM-FastCGI port
 EXPOSE 9000
