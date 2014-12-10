@@ -9,7 +9,7 @@ docker-hhvm
 | :dev      | ![Latest][build-passing] | brunoric/hhvm:base     |
 
 Docker images to run PHP applications and scripts under HHVM. The intent of these images is to work *out-of-the-box* as
-an [HHVM-FastCGI][fastcgi] server. The default command is `/start.sh` that execute Supervisor to spawn HHVM as a server,
+an [HHVM-FastCGI][fastcgi] server. The default command is `start.sh` that execute Supervisor to spawn HHVM as a server,
 but you can also use this image to run php scripts (or phar applications) as described in *How to use* section. If you 
 notice any bug or typo, please let me know. This repository contains the follow images:
 
@@ -56,7 +56,7 @@ How to use?
 
 **1) HHVM FastCGI server**
 
-As mentioned before, the default command executed by the images is `/start.sh` that execute Supervisor to spawn [HHVM as
+As mentioned before, the default command executed by the images is `start.sh` that execute Supervisor to spawn [HHVM as
 a FastCGI][fastcgi] server:
 
 	docker run -p 9000:9000 brunoric/hhvm:deb
