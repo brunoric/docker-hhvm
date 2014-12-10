@@ -18,4 +18,4 @@ RUN chmod 755 /scripts/*.sh
 EXPOSE 9000
 
 # Default command
-CMD ["/start.sh"]
+CMD ["/scripts/start.sh"]
