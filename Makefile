@@ -10,3 +10,6 @@ build-base:
 
 build-dev:
 	sudo docker build -t brunoric/hhvm:dev dev
+
+build-3.4:
+	sudo docker build -t brunoric/hhvm:3.4 3.4
