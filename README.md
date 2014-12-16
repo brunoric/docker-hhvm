@@ -6,7 +6,15 @@ docker-hhvm
 | :latest   | ![Latest][build-passing] | ubuntu:trusty          |
 | :deb      | ![Latest][build-passing] | ubuntu:trusty          |
 | :base     | ![Latest][build-passing] | ubuntu:trusty          |
-| :dev      | ![Latest][build-passing] | brunoric/hhvm:base     |
+| :dev      | ![Latest][build-failing] | brunoric/hhvm:base     |
+| :3.4      | ![Latest][build-passing] | brunoric/hhvm:base     |
+| :3.3      | ![Latest][build-passing] | brunoric/hhvm:base     |
+| :3.2      | ![Latest][build-passing] | brunoric/hhvm:base     |
+| :3.1      | ![Latest][build-passing] | brunoric/hhvm:base     |
+| :3.0      | ![Latest][build-passing] | brunoric/hhvm:base     |
+| :2.4      | ![Latest][build-passing] | brunoric/hhvm:base     |
+| :2.3      | ![Latest][build-passing] | brunoric/hhvm:base     |
+| :2.2      | ![Latest][build-passing] | brunoric/hhvm:base     |
 
 Docker images to run PHP applications and scripts under HHVM. The intent of these images is to work *out-of-the-box* as
 an [HHVM-FastCGI][fastcgi] server. The default command is `start.sh` that execute Supervisor to spawn HHVM as a server,
@@ -17,6 +25,7 @@ notice any bug or typo, please let me know. This repository contains the follow 
 - **`:deb`** - This image uses the official [deb package of HHVM for Ubuntu 14.04][deb-package].
 - **`:base`** - This image is just the base for the compiled images (i.e. all of them but `:deb`).
 - **`:dev`** - This image contains the development version from [HHVM GitHub repository][repository].
+- **`:2.2`** **`:2.3`** **`:2.4`** **`:3.0`** **`:3.1`** **`:3.2`** **`:3.3`** **`:3.4`** - These images contains all specific version tags from [HHVM GitHub repository][repository].
 
 How to get?
 -----------
