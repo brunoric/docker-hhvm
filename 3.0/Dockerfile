@@ -1,3 +1,4 @@
+# brunoric/docker-hhvm:3.0
 FROM brunoric/hhvm:base
 MAINTAINER brunoric <brunoric@gmail.com>
 
