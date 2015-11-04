@@ -11,6 +11,15 @@ build-base:
 build-dev:
 	sudo docker build -t brunoric/hhvm:dev dev
 
+build-3.10:
+	sudo docker build -t brunoric/hhvm:3.10 3.10
+
+build-3.9:
+	sudo docker build -t brunoric/hhvm:3.9 3.9
+
+build-3.8:
+		sudo docker build -t brunoric/hhvm:3.8 3.8
+
 build-3.7:
 	sudo docker build -t brunoric/hhvm:3.7 3.7
 
