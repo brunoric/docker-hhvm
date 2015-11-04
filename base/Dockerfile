@@ -4,7 +4,7 @@ MAINTAINER brunoric <brunoric@gmail.com>
 
 # Installing packages
 RUN apt-get update && apt-get -y upgrade
-RUN sudo apt-get install autoconf automake binutils-dev build-essential cmake g++ gawk git \
+RUN sudo apt-get -y install autoconf automake binutils-dev build-essential cmake g++ gawk git \
   libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-regex-dev \
   libboost-system-dev libboost-thread-dev libboost-context-dev libbz2-dev libc-client-dev libldap2-dev \
   libc-client2007e-dev libcap-dev libcurl4-openssl-dev libdwarf-dev libelf-dev \
