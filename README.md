@@ -1,20 +1,26 @@
 docker-hhvm
 ===========
 
-| Tag       | Build Status             | Base image             |
-| --------- | ------------------------ | ---------------------- |
-| :latest   | ![Latest][build-passing] | ubuntu:trusty          |
-| :deb      | ![Latest][build-passing] | ubuntu:trusty          |
-| :base     | ![Latest][build-passing] | ubuntu:trusty          |
-| :dev      | ![Latest][build-failing] | brunoric/hhvm:base     |
-| :3.4      | ![Latest][build-passing] | brunoric/hhvm:base     |
-| :3.3      | ![Latest][build-passing] | brunoric/hhvm:base     |
-| :3.2      | ![Latest][build-passing] | brunoric/hhvm:base     |
-| :3.1      | ![Latest][build-passing] | brunoric/hhvm:base     |
-| :3.0      | ![Latest][build-passing] | brunoric/hhvm:base     |
-| :2.4      | ![Latest][build-passing] | brunoric/hhvm:base     |
-| :2.3      | ![Latest][build-failing] | brunoric/hhvm:base     |
-| :2.2      | ![Latest][build-failing] | brunoric/hhvm:base     |
+| Tag       | Build Status             | Base image             | Release Date | End of Support     |
+| --------- | ------------------------ | ---------------------- | ------------ | ------------------ |
+| :latest   | ![Latest][build-passing] | ubuntu:trusty          | 28 Oct 2015  | 22 Dec 2015        |
+| :deb      | ![Latest][build-passing] | ubuntu:trusty          | 28 Oct 2015  | 22 Dec 2015        |
+| :base     | ![Latest][build-passing] | ubuntu:trusty          | 04 Nov 2015  | 22 Dec 2015        |
+| :dev      | ![Latest][build-passing] | brunoric/hhvm:base     | ...          | ...                |
+| :3.10     | ![Latest][build-passing] | brunoric/hhvm:base     | 28 Oct 2015  | 22 Dec 2015        |
+| :3.9      | ![Latest][build-passing] | brunoric/hhvm:base     | 14 Aug 2015  | 15 Jul 2016 (LTS)  |
+| :3.8      | ![Latest][build-passing] | brunoric/hhvm:base     | 13 Jul 2015  | 13 Aug 2015        |
+| :3.7      | ![Latest][build-passing] | brunoric/hhvm:base     | 27 Apr 2015  | 12 Jul 2015        |
+| :3.6      | ![Latest][build-passing] | brunoric/hhvm:base     | 11 Mar 2015  | 28 Jan 2016 (LTS)  |
+| :3.5      | ![Latest][build-passing] | brunoric/hhvm:base     | 16 Jan 2015  | 10 Mar 2015        |
+| :3.4      | ![Latest][build-passing] | brunoric/hhvm:base     | 13 Nov 2014  | 15 Jan 2015        |
+| :3.3      | ![Latest][build-passing] | brunoric/hhvm:base     | 19 Sep 2014  | 13 Aug 2015 (LTS)  |
+| :3.2      | ![Latest][build-passing] | brunoric/hhvm:base     | 17 Jul 2014  | 18 Sep 2014        |
+| :3.1      | ![Latest][build-passing] | brunoric/hhvm:base     | 27 May 2014  | 16 Jul 2014        |
+| :3.0      | ![Latest][build-passing] | brunoric/hhvm:base     | 27 Mar 2014  | 26 May 2014        |
+| :2.4      | ![Latest][build-passing] | brunoric/hhvm:base     | 31 Jan 2014  | 26 Mar 2014        |
+| :2.3      | ![Latest][build-failing] | brunoric/hhvm:base     | 12 Dec 2013  | 30 Jan 2014        |
+| :2.2      | ![Latest][build-failing] | brunoric/hhvm:base     | 16 Oct 2013  | 11 Dec 2013        |
 
 Docker images to run PHP applications and scripts under HHVM. The intent of these images is to work *out-of-the-box* as
 an [HHVM-FastCGI][fastcgi] server. The default command is `start.sh` that execute Supervisor to spawn HHVM as a server,
@@ -94,9 +100,7 @@ Additional notes
 
 - [Docker documentation][docker].
 - [brunoric at Docker Hub][registry].
-- The build statuses are provided by [Docker Hub repository build details][repository-hub] and inserted manually in this
-documentation. I am also developing a little tool to handle [Docker Hub web hooks][web-hooks] and soon it will be the 
-automatic way to handle that statuses.
+- The build statuses are provided by [Docker Hub repository build details][repository-hub] and inserted manually in this documentation. I am also developing a little tool to handle [Docker Hub web hooks][web-hooks] and soon it will be the automatic way to handle that statuses.
 
 [deb-package]: https://github.com/facebook/hhvm/wiki/Prebuilt-Packages-on-Ubuntu-14.04
 [fastcgi]: https://github.com/facebook/hhvm/wiki/FastCGI
