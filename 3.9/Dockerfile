@@ -1,8 +1,8 @@
-# brunoric/docker-hhvm:3.2
+# brunoric/docker-hhvm:3.9
 FROM brunoric/hhvm:base
 MAINTAINER brunoric <brunoric@gmail.com>
 
-ENV HHVM_VERSION HHVM-3.2.0
+ENV HHVM_VERSION HHVM-3.9.1
 ENV CORE_NUMBER 4
 
 # Building HHVM

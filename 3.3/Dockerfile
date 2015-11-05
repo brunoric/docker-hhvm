@@ -2,14 +2,16 @@
 FROM brunoric/hhvm:base
 MAINTAINER brunoric <brunoric@gmail.com>
 
-ENV HHVM_VERSION HHVM-3.3.5
+ENV HHVM_VERSION HHVM-3.3.7
 ENV CORE_NUMBER 4
 
 # Building HHVM
 WORKDIR /hhvm-repo
 RUN git checkout tags/${HHVM_VERSION}
 RUN git submodule update --init --recursive
-RUN cmake . && make -j ${CORE_NUMBER} && make install
+RUN cmake -DMYSQL_UNIX_SOCK_ADDR=/var/run/mysqld/mysqld.sock .
+RUN make -j ${CORE_NUMBER}
+RUN make install
 
 # Removing the pulled repository
 WORKDIR /

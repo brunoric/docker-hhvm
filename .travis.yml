@@ -1,0 +1,13 @@
+language: c
+
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - make build-base
+  - make build-dev
+
+script:
+  - docker run --rm -v `pwd`:`pwd` -w `pwd` brunoric/hhvm:deb hhvm test/bruto-mesmo.php

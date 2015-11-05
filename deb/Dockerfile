@@ -4,10 +4,11 @@ MAINTAINER brunoric <brunoric@gmail.com>
 
 # Installing packages
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get -y install wget supervisor
-RUN wget -O - http://dl.hhvm.com/conf/hhvm.gpg.key | sudo apt-key add -
-RUN echo deb http://dl.hhvm.com/ubuntu trusty main | sudo tee /etc/apt/sources.list.d/hhvm.list
-RUN sudo apt-get update && apt-get -y install libgmp-dev libmemcached-dev hhvm
+RUN apt-get -y install software-properties-common wget supervisor
+RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0x5a16e7281be7a449
+RUN add-apt-repository "deb http://dl.hhvm.com/ubuntu $(lsb_release -sc) main"
+RUN apt-get update
+RUN apt-get -y install hhvm
 RUN apt-get clean && apt-get autoremove -y
 
 # Scripts
