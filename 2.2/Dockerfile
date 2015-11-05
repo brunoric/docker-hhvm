@@ -3,7 +3,7 @@ FROM brunoric/hhvm:base
 MAINTAINER brunoric <brunoric@gmail.com>
 
 ENV HHVM_VERSION HHVM-2.2.0
-ENV CORE_NUMBER 4
+ENV CORE_NUMBER 2
 
 # Building HHVM
 WORKDIR /hhvm-repo
