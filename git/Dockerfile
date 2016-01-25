@@ -1,4 +1,4 @@
-# brunoric/docker-hhvm:base
+# brunoric/docker-hhvm:git
 FROM ubuntu:trusty
 MAINTAINER brunoric <brunoric@gmail.com>
 
@@ -22,3 +22,9 @@ RUN git clone git://github.com/facebook/hhvm.git hhvm-repo
 ADD supervisor-config/ /etc/supervisor/conf.d/
 ADD scripts/ /scripts/
 RUN chmod 755 /scripts/*.sh
+
+# ONBUILD instructions to properly update submodules
+ONBUILD ARG HHVM_VERSION=3.11.1
+ONBUILD WORKDIR /hhvm-repo
+ONBUILD RUN git checkout tags/HHVM-${HHVM_VERSION}
+ONBUILD RUN git submodule update --init --recursive
