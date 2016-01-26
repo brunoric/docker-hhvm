@@ -1,4 +1,4 @@
-# brunoric/docker-hhvm:base
+# brunoric/docker-hhvm:git
 FROM ubuntu:trusty
 MAINTAINER brunoric <brunoric@gmail.com>
 
@@ -13,8 +13,7 @@ RUN apt-get -y install autoconf automake binutils-dev build-essential cmake g++ 
       libonig-dev libpcre3-dev libreadline-dev libtbb-dev libtool libxml2-dev zlib1g-dev \
       libevent-dev libmagickwand-dev libinotifytools0-dev libiconv-hook-dev libedit-dev \
       libiberty-dev libxslt1-dev ocaml-native-compilers libsqlite3-dev libyaml-dev libgmp3-dev \
-      gperf libkrb5-dev libnotify-dev
-RUN apt-get -y install wget supervisor
+      gperf libkrb5-dev libnotify-dev wget supervisor
 
 # Downloading HHVM from source-code
 RUN git clone git://github.com/facebook/hhvm.git hhvm-repo
@@ -23,3 +22,9 @@ RUN git clone git://github.com/facebook/hhvm.git hhvm-repo
 ADD supervisor-config/ /etc/supervisor/conf.d/
 ADD scripts/ /scripts/
 RUN chmod 755 /scripts/*.sh
+
+# ONBUILD instructions to properly update submodules
+ONBUILD ARG HHVM_VERSION=3.11.1
+ONBUILD WORKDIR /hhvm-repo
+ONBUILD RUN git checkout tags/HHVM-${HHVM_VERSION}
+ONBUILD RUN git submodule update --init --recursive

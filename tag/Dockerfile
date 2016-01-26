@@ -1,14 +1,10 @@
-# brunoric/docker-hhvm:3.9
-FROM brunoric/hhvm:base
+# brunoric/docker-hhvm:tag
+FROM brunoric/hhvm:git
 MAINTAINER brunoric <brunoric@gmail.com>
 
-ENV HHVM_VERSION HHVM-3.9.1
 ENV CORE_NUMBER 2
 
 # Building HHVM
-WORKDIR /hhvm-repo
-RUN git checkout tags/${HHVM_VERSION}
-RUN git submodule update --init --recursive
 RUN cmake -DMYSQL_UNIX_SOCK_ADDR=/var/run/mysqld/mysqld.sock .
 RUN make -j ${CORE_NUMBER}
 RUN make install

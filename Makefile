@@ -1,54 +1,22 @@
-all: build
+# docker-hhvm
+# brunoric <brunoric@gmail.com>
 
-build: build-deb build-base build-dev
+ifndef HHVM_VERSION
+	HHVM_VERSION=hhvm
+endif
 
+# For HHVM deb packages the HHVM_VERSION possible values are:
+# hhvm, hhvm-dbg, hhvm-dev, hhvm-nightly, hhvm-nightly-dbg, hhvm-dev-nightly
+# https://docs.hhvm.com/hhvm/installation/linux#ubuntu-14.04-trusty
 build-deb:
-	docker build -t brunoric/hhvm:deb deb
+	docker build --build-arg HHVM_VERSION=$(HHVM_VERSION) -t brunoric/hhvm:deb-$(HHVM_VERSION) deb
 
-build-base:
-	docker build -t brunoric/hhvm:base base
+build-git:
+	docker build -t brunoric/hhvm:git git
 
-build-dev:
-	docker build -t brunoric/hhvm:dev dev
+# For HHVM tag packages the HHVM_VERSION possible values are:
+# 3.11.1, 3.11.0, 3.10.1 ... all tags on HHVM Github repository.
+# https://github.com/facebook/hhvm
 
-build-3.10:
-	docker build -t brunoric/hhvm:3.10 3.10
-
-build-3.9:
-	docker build -t brunoric/hhvm:3.9 3.9
-
-build-3.8:
-	docker build -t brunoric/hhvm:3.8 3.8
-
-build-3.7:
-	docker build -t brunoric/hhvm:3.7 3.7
-
-build-3.6:
-	docker build -t brunoric/hhvm:3.6 3.6
-
-build-3.5:
-	docker build -t brunoric/hhvm:3.5 3.5
-
-build-3.4:
-	docker build -t brunoric/hhvm:3.4 3.4
-
-build-3.3:
-	docker build -t brunoric/hhvm:3.3 3.3
-
-build-3.2:
-	docker build -t brunoric/hhvm:3.2 3.2
-
-build-3.1:
-	docker build -t brunoric/hhvm:3.1 3.1
-
-build-3.0:
-	docker build -t brunoric/hhvm:3.0 3.0
-
-build-2.4:
-	docker build -t brunoric/hhvm:2.4 2.4
-
-build-2.3:
-	docker build -t brunoric/hhvm:2.3 2.3
-
-build-2.2:
-	docker build -t brunoric/hhvm:2.2 2.2
+build-tag:
+	docker build --build-arg HHVM_VERSION=$(HHVM_VERSION) -t brunoric/hhvm:tag-$(HHVM_VERSION) tag
