@@ -89,9 +89,11 @@ Additional notes
 
 - [Docker documentation][docker].
 - [brunoric at Docker Hub][registry].
+- [docker-hhvm at Docker Hub][registry-docker-hhvm]
 
 [fastcgi]: https://github.com/facebook/hhvm/wiki/FastCGI
 [repository]: https://github.com/facebook/hhvm
 [docker]: https://docs.docker.com
 [registry]: https://registry.hub.docker.com/u/brunoric
+[registry-docker-hhvm]: https://hub.docker.com/r/brunoric/hhvm/
 [release-schedule]: https://docs.hhvm.com/hhvm/installation/release-schedule
