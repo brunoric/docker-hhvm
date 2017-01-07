@@ -10,6 +10,10 @@ dependencies:
     - docker info
     - docker build --build-arg HHVM_VERSION=hhvm -t brunoric/hhvm:deb-hhvm deb
 
+test:
+  override:
+    - ./test/all-tests.sh
+
 deployment:
   hub:
     branch: master
