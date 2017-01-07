@@ -1,5 +1,5 @@
 docker-hhvm status
-==================
+-----------
 
 ### master
 ![circleci-master-build](https://circleci.com/gh/brunoric/docker-hhvm/tree/master.png?style=shield)
@@ -8,7 +8,7 @@ docker-hhvm status
 ![circleci-master-build](https://circleci.com/gh/brunoric/docker-hhvm/tree/develop.png?style=shield)
 
 docker-hhvm
-===========
+-----------
 
 Docker images to run PHP applications and scripts under HHVM. The intent of these images is to work *out-of-the-box* as an [HHVM-FastCGI][fastcgi] server. The default command is `start.sh` that execute Supervisor to spawn HHVM as a server, but you can also use this image to run php scripts (or phar applications) as described in *How to use* section. This repository contains the follow images:
 
