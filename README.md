@@ -1,7 +1,9 @@
 docker-hhvm
 ===========
 
-Docker images to run PHP applications and scripts under HHVM. The intent of these images is to work *out-of-the-box* as an [HHVM-FastCGI][fastcgi] server. The default command is `start.sh` that execute Supervisor to spawn HHVM as a server, but you can also use this image to run php scripts (or phar applications) as described in *How to use* section. If you notice any bug or typo, please let me know. This repository contains the follow images:
+![circleci-master-build](https://circleci.com/gh/brunoric/docker-hhvm/tree/master.svg?style=shield&circle-token=2791f3ddb68837234c1437b0dcb3ab599f9873a7)
+
+Docker images to run PHP applications and scripts under HHVM. The intent of these images is to work *out-of-the-box* as an [HHVM-FastCGI][fastcgi] server. The default command is `start.sh` that execute Supervisor to spawn HHVM as a server, but you can also use this image to run php scripts (or phar applications) as described in *How to use* section. This repository contains the follow images:
 
 | Tag                   | Base image        |
 | --------------------- | ----------------- |
@@ -84,6 +86,14 @@ There are a bunch of ways to do this task (like the others already described hav
 
     docker run --rm -v `pwd`:`pwd` -w `pwd` brunoric/hhvm:deb-hhvm hhvm script.php
 
+Docker Hub
+----------
+This repository is using [CircleCI][circleci] to run automated builds and send them to the [Docker Hub][registry].
+
+Contributing
+------------
+If you notice any bug or typo, please feel free to create an issue and/or open a pull request with the fix.
+
 Additional notes
 ----------------
 
@@ -95,3 +105,4 @@ Additional notes
 [docker]: https://docs.docker.com
 [registry]: https://registry.hub.docker.com/u/brunoric
 [release-schedule]: https://docs.hhvm.com/hhvm/installation/release-schedule
+[circleci]: https://circleci.com/gh/brunoric/docker-hhvm
