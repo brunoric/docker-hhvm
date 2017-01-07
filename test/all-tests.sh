@@ -14,7 +14,7 @@ function version_test()
 
 function all_builds_version_test()
 {
-    for build in deb-hhvm deb-hhvm-dbg deb-hhvm-dev deb-hhvm-nightly deb-hhvm-nightly-dbg deb-hhvm-dev-nightly tag-3.17 git
+    for build in deb-hhvm deb-hhvm-dbg deb-hhvm-dev deb-hhvm-nightly deb-hhvm-nightly-dbg deb-hhvm-dev-nightly tag-3.17.0 git
     do 
         version_test $build;
     done

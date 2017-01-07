@@ -24,7 +24,7 @@ ADD scripts/ /scripts/
 RUN chmod 755 /scripts/*.sh
 
 # ONBUILD instructions to properly update submodules
-ONBUILD ARG HHVM_VERSION=3.17
+ONBUILD ARG HHVM_VERSION=3.17.0
 ONBUILD WORKDIR /hhvm-repo
 ONBUILD RUN git checkout tags/HHVM-${HHVM_VERSION}
 ONBUILD RUN git submodule update --init --recursive
