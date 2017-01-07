@@ -1,12 +1,18 @@
 # CircleCI config file
 machine:
+  pre:
+    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
   services:
     - docker
 
 dependencies:
   override:
     - docker info
-    - docker build --build-arg hhvm -t brunoric/hhvm:deb-hhvm deb
+    - docker build --build-arg HHVM_VERSION=hhvm -t brunoric/hhvm:deb-hhvm deb
+
+test:
+  override:
+    - ./test/all-tests.sh
 
 deployment:
   hub:
