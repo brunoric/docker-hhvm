@@ -1,0 +1,16 @@
+# CircleCI config file
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build --build-arg hhvm -t brunoric/hhvm:deb-hhvm deb
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push brunoric/hhvm:deb-hhvm
