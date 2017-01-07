@@ -6,7 +6,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build --build-arg hhvm -t brunoric/hhvm:deb-hhvm deb
+    - docker build --build-arg HHVM_VERSION=hhvm -t brunoric/hhvm:deb-hhvm deb
 
 deployment:
   hub:
