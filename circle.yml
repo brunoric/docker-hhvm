@@ -14,8 +14,8 @@ dependencies:
     - docker build --build-arg HHVM_VERSION=hhvm-nightly -t brunoric/hhvm:deb-hhvm-nightly deb
     - docker build --build-arg HHVM_VERSION=hhvm-nightly-dbg -t brunoric/hhvm:deb-hhvm-nightly-dbg deb
     - docker build --build-arg HHVM_VERSION=hhvm-dev-nightly -t brunoric/hhvm:deb-hhvm-dev-nightly deb
-    - docker build --build-arg HHVM_VERSION=3.17 -t brunoric/hhvm:tag-3.17 tag
     - docker build -t brunoric/hhvm:git git
+    - docker build --build-arg HHVM_VERSION=3.17 -t brunoric/hhvm:tag-3.17 tag
     
 test:
   override:
