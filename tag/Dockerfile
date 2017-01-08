@@ -2,7 +2,7 @@
 FROM brunoric/hhvm:git
 MAINTAINER brunoric <brunoric@gmail.com>
 
-ENV CORE_NUMBER 2
+ENV CORE_NUMBER 8
 
 # Building HHVM
 RUN cmake -DMYSQL_UNIX_SOCK_ADDR=/var/run/mysqld/mysqld.sock .

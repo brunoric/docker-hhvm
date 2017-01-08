@@ -2,7 +2,7 @@ function version_test()
 {
     if [ ! -z "$1" ]; then
         local BUILD=$1
-        local VERSION=$(docker run --rm -v `pwd`:`pwd` -w `pwd` brunoric/hhvm:$BUILD hhvm ./test/version.php)
+        local VERSION=$(docker run -v `pwd`:`pwd` -w `pwd` brunoric/hhvm:$BUILD hhvm ./test/version.php)
         if [[ $VERSION == *"hhvm"* ]]; then
             echo 'Version test OK!'; 
         else
@@ -14,7 +14,7 @@ function version_test()
 
 function all_builds_version_test()
 {
-    for build in deb-hhvm deb-hhvm-dbg deb-hhvm-dev deb-hhvm-nightly deb-hhvm-nightly-dbg deb-hhvm-dev-nightly tag-3.17 git
+    for build in deb-hhvm deb-hhvm-dbg deb-hhvm-dev deb-hhvm-nightly deb-hhvm-nightly-dbg deb-hhvm-dev-nightly
     do 
         version_test $build;
     done
