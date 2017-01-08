@@ -26,3 +26,8 @@ deployment:
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push brunoric/hhvm:deb-hhvm
+      - docker push brunoric/hhvm:deb-hhvm-dbg
+      - docker push brunoric/hhvm:deb-hhvm-dev
+      - docker push brunoric/hhvm:deb-hhvm-nightly
+      - docker push brunoric/hhvm:deb-hhvm-nightly-dbg
+      - docker push brunoric/hhvm:deb-hhvm-dev-nightly
